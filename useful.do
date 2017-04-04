@@ -14,6 +14,11 @@ program UninstallAndInstall
 	}
 	di as text `"`cmd'"'
 	`cmd'
+
+	// Not strictly necessary as it gets compiled later when called by the user
+	if inlist("`prog'", "ftools", "reghdfe") {
+		`prog', compile
+	}
 end
 
 adopath
